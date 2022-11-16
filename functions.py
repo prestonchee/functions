@@ -13,13 +13,11 @@ user_unit = input ("What unit is your number? ")
 #to convert mm to in --> mm / 25.4
 
 #user gives in unit
-
-conv_mm = user_number * 25.4
-
+if (user_unit =='in'):
+    conv_num = user_number * 25.4
+elif (user_unit == 'mm'):
 # user gies mm unit
+    conv_num = user_number / 25.4
 
-conv_in = user_number / 25.4
-
-
-print (conv_mm)
+print (conv_num)
 print (user_number)

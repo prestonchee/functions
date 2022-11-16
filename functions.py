@@ -7,4 +7,4 @@
 #output the answer to the user
 
 user_number = input ("What number would you like too convert? ")
-print(user_number)
+user_unit = input ("What unit is your number? ")

@@ -1,1 +1,1 @@
-# funtions
+# functions

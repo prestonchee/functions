@@ -12,6 +12,7 @@ def user_parser(user_input):
 # Separate the number from unit
     global valid_data
     valid_data = True
+    #Todo address input from user without space
     values = user_input.rsplit(" ")
     number = values[0]
 
@@ -21,11 +22,14 @@ def user_parser(user_input):
         print("That is not a valid number ")
 
     unit = values[1]
-    if unit != 'in' and unit != 'mm':
+    if unit != 'in' and unit != 'mm' and unit != 'ft':
         print("That is not a valid unit")
         valid_data = False
 
     return number, unit
+def print_results(user_input, user_number, conv_number, conv_unit):
+    result = ("{:.2f} {} is equal to {:.2f} {}")
+    print (result user_number, user_unit, conv_number,conv_unit)
 
 while True: # continue progra until user exits
     while True: #check for valid data
@@ -35,9 +39,8 @@ while True: # continue progra until user exits
      #check for invaild messages
 
         if valid_data:
-            print ('User Number:', user_number)
-            print ('User Unit:', user_unit)
             break
+
     #perform calculations
     if(user_unit == 'in'):
        # perform in to mm
@@ -48,8 +51,17 @@ while True: # continue progra until user exits
        # perform mm to in
         conv_number = user_number / 25.4
         conv_unit = 'in'
+    elif(user_unit == 'ft'):
+        #perform ft to in
+        conv_number = user_number * 12
+        
+        conv_unit = 'in'
+    print_results (user_number, user_unit, conv_number, conv_unit)
+    #create a function that prints out the answer formatted to 2 decimal places
+    #Give the original value and unit and the conv number and unit
 
-    print (conv_number,conv_unit)
+    # 12.00 ft is equal to 144.00 in
+
         
 
 
